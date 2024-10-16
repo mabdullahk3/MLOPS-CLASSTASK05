@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task5-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: task5
+  template:
+    metadata:
+      labels:
+        app: task5
+    spec:
+      containers:
+      - name: task5-container
+        image: mabdullah12/mlops-task5:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
